@@ -18,6 +18,11 @@ Feature credit attribution describes how the model distributes the prediction ef
 - Key distinction: Omitted variable bias is the problem caused by leaving out an important feature. Feature credit attribution is the explanation of how the model redistributes importance when those features are included.
 
 
+# Normal Equation / SVD limitations
+- Normal Equation and SVD are exact methods for solving linear regression, but they can be computationally expensive for large datasets.
+- They require inverting a matrix, which can be unstable if the matrix is not full rank (e.g., when features are highly correlated).
+- If you have more columns than rows, the Normal Equation cannot be applied because the matrix to invert is not square. SVD can handle this case but may still be computationally intensive.
+
 # Definition List
 
 - Omitted variable bias: A bias that happens when a model leaves out a relevant feature that affects the target and is also related to the included features. Because of that omission, the coefficients of the included features can become misleading.
